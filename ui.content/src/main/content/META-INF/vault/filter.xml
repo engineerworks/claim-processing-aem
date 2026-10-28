@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/claims-processing" mode="merge"/>
+    <filter root="/content/claims-processing" mode="merge"/>
+    <filter root="/content/dam/claims-processing" mode="merge">
+        <exclude pattern="/content/dam/claims-processing(/.*)?"/>
+        <include pattern="/content/dam/claims-processing/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/claims-processing/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/claims-processing" mode="merge"/>
+</workspaceFilter>

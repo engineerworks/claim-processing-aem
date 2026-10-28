@@ -1,0 +1,178 @@
+<div
+        class="claims-processor"
+        data-cmp-is="claimsprocessor">
+
+    <h2 class="claims-processor__title">
+        Claims Processing
+    </h2>
+
+    <p class="claims-processor__description">
+        Enter the claim information and select Process Claim.
+    </p>
+
+    <form
+            class="claims-processor__form"
+            data-claims-form>
+
+        <div class="claims-processor__field">
+            <label for="${resource.path @ context='attribute'}-policy-id">
+                Policy ID
+            </label>
+
+            <input
+                    id="${resource.path @ context='attribute'}-policy-id"
+                    name="policyId"
+                    type="text"
+                    placeholder="Example: 100007"
+                    required />
+        </div>
+
+        <div class="claims-processor__field">
+            <label for="${resource.path @ context='attribute'}-policyholder-id">
+                Policyholder ID
+            </label>
+
+            <input
+                    id="${resource.path @ context='attribute'}-policyholder-id"
+                    name="policyHolderId"
+                    type="text"
+                    placeholder="Example: 1000071"
+                    required />
+        </div>
+
+        <div class="claims-processor__field">
+            <label for="${resource.path @ context='attribute'}-date-of-service">
+                Date of Service
+            </label>
+
+            <input
+                    id="${resource.path @ context='attribute'}-date-of-service"
+                    name="dateOfService"
+                    type="date"
+                    required />
+        </div>
+
+        <div class="claims-processor__field">
+            <label for="${resource.path @ context='attribute'}-main-category">
+                Main Category
+            </label>
+
+            <input
+                    id="${resource.path @ context='attribute'}-main-category"
+                    name="mainCategory"
+                    type="text"
+                    placeholder="Example: Emergency And Urgent Care"
+                    required />
+        </div>
+
+        <div class="claims-processor__field">
+            <label for="${resource.path @ context='attribute'}-sub-category">
+                Subcategory
+            </label>
+
+            <input
+                    id="${resource.path @ context='attribute'}-sub-category"
+                    name="subCategory"
+                    type="text"
+                    placeholder="Example: URGENT CARE VISIT"
+                    required />
+        </div>
+
+        <div class="claims-processor__field">
+            <label for="${resource.path @ context='attribute'}-billed-amount">
+                Billed Amount
+            </label>
+
+            <input
+                    id="${resource.path @ context='attribute'}-billed-amount"
+                    name="billedAmount"
+                    type="number"
+                    min="0.01"
+                    step="0.01"
+                    placeholder="Example: 250.00"
+                    required />
+        </div>
+
+        <div class="claims-processor__actions">
+            <button
+                    class="claims-processor__submit"
+                    type="submit">
+                Process Claim
+            </button>
+        </div>
+
+        <p
+                class="claims-processor__status"
+                data-claims-status
+                role="status"
+                aria-live="polite">
+        </p>
+    </form>
+
+    <section
+            class="claims-processor__result"
+            data-claims-result
+            aria-live="polite"
+            hidden>
+
+        <h3>Claim Result</h3>
+
+        <dl>
+            <div>
+                <dt>Plan</dt>
+                <dd data-result-plan-id></dd>
+            </div>
+
+            <div>
+                <dt>Coverage Rule</dt>
+                <dd data-result-rule-used></dd>
+            </div>
+
+            <div>
+                <dt>Billed Amount</dt>
+                <dd data-result-billed-amount></dd>
+            </div>
+
+            <div>
+                <dt>Policyholder Pays</dt>
+                <dd data-result-policyholder-pays></dd>
+            </div>
+
+            <div>
+                <dt>Plan Pays</dt>
+                <dd data-result-plan-pays></dd>
+            </div>
+
+            <div>
+                <dt>Individual Accumulated Deductible</dt>
+                <dd data-result-individual-deductible></dd>
+            </div>
+
+            <div>
+                <dt>Family Accumulated Deductible</dt>
+                <dd data-result-family-deductible></dd>
+            </div>
+
+            <div>
+                <dt>Processing Message</dt>
+                <dd data-result-processing-message></dd>
+            </div>
+        </dl>
+    </section>
+
+    <section
+            class="claims-processor__error"
+            data-claims-error
+            role="alert"
+            hidden>
+
+        <h3>Claim Processing Error</h3>
+
+        <p>
+            <strong>Error Code:</strong>
+            <span data-error-code></span>
+        </p>
+
+        <p data-error-message></p>
+    </section>
+</div>

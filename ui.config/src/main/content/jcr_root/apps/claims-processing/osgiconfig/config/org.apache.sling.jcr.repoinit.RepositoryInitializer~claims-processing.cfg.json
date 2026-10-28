@@ -1,0 +1,7 @@
+{
+    "scripts": [
+        "create path (sling:OrderedFolder) /content/dam/claims-processing",
+        "create path (nt:unstructured) /content/dam/claims-processing/jcr:content",
+        "set properties on /content/dam/claims-processing/jcr:content\n  set cq:conf{String} to /conf/claims-processing\n  set jcr:title{String} to \"Claims Processing\"\nend"
+    ]
+}
